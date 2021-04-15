@@ -1,0 +1,23 @@
+{% extends 'accounts/main.html' %} 
+{% block content %} 
+
+<br>
+<div class="row">
+    <div class="col-md-6">
+        <div class="card card-body">
+<form action=''  method="post">
+    {% csrf_token %}
+    
+    <!--this  {{ formset.management_form }} tag helps django take each form value indivisually-->
+    {{ formset.management_form }}
+    {% for form in formset %}
+    {{form}}<hr>
+    {% endfor %}
+    <br>
+    <br>
+    <input class="btn btn-sm btn-info" type=submit name="Submit">
+</form>
+</div>
+</div>
+</div>
+{% endblock %}
